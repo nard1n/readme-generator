@@ -53,12 +53,12 @@ const questions = () => {
         },
         {
             type: 'list',
-            name: 'license-badge',
+            name: 'badge',
             message: 'Select the badge for selected license',
             choices: [
                 "MIT",
                 "Apache 2.0",
-                "BSD 2 Clause",
+                "BSD-2-Clause",
                 "Simple",
                 "Unlicense"
             ],
@@ -78,42 +78,41 @@ const questions = () => {
 
 // content of README file
 const generateReadMe = (answers) =>
-    `
-    # ${answers.title}
+`# ${answers.title}
 
-    ## Description
-    ![License](https://img.shields.io/badge/License-${answers.license-badge}-yellow.svg)
-    ${answers.description}
+## Description
+![License](https://img.shields.io/badge/License-${answers.badge}-yellow.svg)
+${answers.description}
 
-    ## Table of Contents
+## Table of Contents
 
-    * [Installation](#Installation)
-    * [Usage](#Usage)
-    * [Contributing](#Contributing)
-    * [Tests](#Tests)
-    * [License](#License)
-    * [Questions](#Questions)
+* [Installation](#Installation)
+* [Usage](#Usage)
+* [Contributing](#Contributing)
+* [Tests](#Tests)
+* [License](#License)
+* [Questions](#Questions)
 
-    ## Installation
-    ${answers.installation}
+## Installation
+${answers.installation}
 
-    ## Usage
-    ${answers.usage}
+## Usage
+${answers.usage}
 
-    ## Contributing
-    ${answers.contributing}
+## Contributing
+${answers.contributing}
 
-    ## Tests
-    ${answers.tests}
+## Tests
+${answers.tests}
 
-    ## License
-    This project is released under [${answers.license}](https://opensource.org/licenses/${answers.license}) opensource licensing
+## License
+This project is released under [${answers.license}](https://opensource.org/licenses/${answers.license}) opensource licensing
 
-    ## Questions
-    For more about my work, check out my Github profile: https://github.com/${answers.github}
+## Questions
+For more about my work, check out my Github profile: https://github.com/${answers.github}
 
-    If you have any questions and would like to chat, please feel free to send me 
-    an email directly to ${answers.email}`;
+If you have any questions and would like to chat, please feel free to send me 
+an email directly to ${answers.email}`;
 
 // function to initialize app and write README file after prompts are answered
 ////function writeToFile(fileName, data) {}
