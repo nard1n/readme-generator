@@ -1,7 +1,7 @@
 # README.md Generator
 
 ## Description
-![License](https://img.shields.io/badge/License-BSD-2-Clause-yellow.svg)
+![License](https://img.shields.io/badge/License-BSD 2 Clause-yellow.svg)
 This is a simple Node.JS CLI app that helps a user generate a README.md file for their project repositories. It prompts the user to enter essential information about their repository, such as: title, description, installation instructions, usage information, contribution guidelines, and test instructions. It will display all of the information in a professional manner in separated sections along with a table of contents containing links to corresponding sections. It also includes a Questions section with a link to Github profile and an email address based on user input
 
 ## Table of Contents
