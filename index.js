@@ -53,12 +53,12 @@ const questions = () => {
         },
         {
             type: 'list',
-            name: 'license badge',
+            name: 'license-badge',
             message: 'Select the badge for selected license',
             choices: [
                 "MIT",
                 "Apache 2.0",
-                "BSD 2-Clause",
+                "BSD 2 Clause",
                 "Simple",
                 "Unlicense"
             ],
@@ -81,7 +81,7 @@ const generateReadMe = (answers) =>
     `# ${answers.title}
 
     ## Description
-    [![License](https://img.shields.io/badge/License-${answers.license}-yellow.svg)]
+    ![License](https://img.shields.io/badge/License-${answers.license-badge}-yellow.svg)
     ${answers.description}
 
     ## Table of Contents
