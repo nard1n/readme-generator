@@ -106,7 +106,7 @@ const generateReadMe = (answers) =>
     ${answers.tests}
 
     ## License
-    This project is released under [${answers.license}|https://opensource.org/licenses/${answers.license}]
+    This project is released under [${answers.license}](https://opensource.org/licenses/${answers.license})
 
     ## Questions
     For more about my work, check out my Github profile: https://github.com/${answers.github}

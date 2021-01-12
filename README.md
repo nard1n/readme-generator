@@ -2,6 +2,7 @@
 
 ## Description
 ![License](https://img.shields.io/badge/License-BSD 2 Clause-yellow.svg)
+
 This is a simple Node.JS CLI app that helps a user generate a README.md file for their project repositories. It prompts the user to enter essential information about their repository, such as: title, description, installation instructions, usage information, contribution guidelines, and test instructions. It will display all of the information in a professional manner in separated sections along with a table of contents containing links to corresponding sections. It also includes a Questions section with a link to Github profile and an email address based on user input
 
 ## Table of Contents
@@ -32,7 +33,7 @@ We love seeing community contribution to any opensource project! If you would li
 There aren't any tests to run ahead of using this application. However, always remember to test often when you make your own changes.
 
 ## License
-This project is released under [BSD-2-Clause|https://opensource.org/licenses/BSD-2-Clause]
+This project is released under [BSD-2-Clause](https://opensource.org/licenses/BSD-2-Clause)
 
 ## Questions
 For more about my work, check out my Github profile: https://github.com/nard1n
