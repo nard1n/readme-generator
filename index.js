@@ -78,7 +78,8 @@ const questions = () => {
 
 // content of README file
 const generateReadMe = (answers) =>
-    `# ${answers.title}
+    `
+    # ${answers.title}
 
     ## Description
     ![License](https://img.shields.io/badge/License-${answers.license-badge}-yellow.svg)
@@ -106,7 +107,7 @@ const generateReadMe = (answers) =>
     ${answers.tests}
 
     ## License
-    This project is released under [${answers.license}](https://opensource.org/licenses/${answers.license})
+    This project is released under [${answers.license}](https://opensource.org/licenses/${answers.license}) opensource licensing
 
     ## Questions
     For more about my work, check out my Github profile: https://github.com/${answers.github}

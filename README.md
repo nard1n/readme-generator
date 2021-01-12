@@ -33,7 +33,7 @@ We love seeing community contribution to any opensource project! If you would li
 There aren't any tests to run ahead of using this application. However, always remember to test often when you make your own changes.
 
 ## License
-This project is released under [BSD-2-Clause](https://opensource.org/licenses/BSD-2-Clause)
+This project is released under [BSD-2-Clause](https://opensource.org/licenses/BSD-2-Clause) opensource licensing
 
 ## Questions
 For more about my work, check out my Github profile: https://github.com/nard1n
