@@ -45,6 +45,7 @@ return `# ${data.title}
 
 ## Description
 ![License](${licenseBadge})
+\n
 ${data.description}
 
 ## Table of Contents
@@ -70,6 +71,7 @@ ${data.tests}
 
 ## License
 ${licenseSection}:
+\n
 ${licenseLink}
 
 ## Questions
