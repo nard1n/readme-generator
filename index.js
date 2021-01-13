@@ -3,12 +3,13 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 const util = require('util');
 
+const generateMarkdown = require('./utils/generateMarkdown');
+
 // creating promise function (using promisify from util module)
 const writeFileAsync = util.promisify(fs.writeFile);
 
 // array of questions for user input
-const questions = () => {
-    return inquirer.prompt([
+const questions = [
         {
             type: 'input',
             name: 'title',
@@ -45,21 +46,9 @@ const questions = () => {
             message: 'Choose a license for your application',
             choices: [
                 "MIT",
-                "Apache-2.0",
-                "BSD-2-Clause",
-                "Simple-2.0",
-                "Unlicense"
-            ],
-        },
-        {
-            type: 'list',
-            name: 'badge',
-            message: 'Select the badge for selected license',
-            choices: [
-                "MIT",
                 "Apache 2.0",
-                "BSD-2-Clause",
-                "Simple",
+                "BSD 2 Clause",
+                "Simple 2.0",
                 "Unlicense"
             ],
         },
@@ -73,57 +62,26 @@ const questions = () => {
             name: 'email',
             message: 'What is your email?',
         }
-    ]);
-};
+    ];
 
-// content of README file
-const generateReadMe = (answers) =>
-`# ${answers.title}
+// function to prompt questions
+function promptQuestions(questions) {
+    return inquirer.prompt(questions);
+}
 
-## Description
-![License](https://img.shields.io/badge/License-${answers.badge}-yellow.svg)
-${answers.description}
+// function to write README file after prompts are answered
+function writeToFile(fileName, data) {
+    writeFileAsync(fileName, data)
+}
 
-## Table of Contents
-
-* [Installation](#Installation)
-* [Usage](#Usage)
-* [Contributing](#Contributing)
-* [Tests](#Tests)
-* [License](#License)
-* [Questions](#Questions)
-
-## Installation
-${answers.installation}
-
-## Usage
-${answers.usage}
-
-## Contributing
-${answers.contributing}
-
-## Tests
-${answers.tests}
-
-## License
-This project is released under [${answers.license}](https://opensource.org/licenses/${answers.license}) opensource licensing
-
-## Questions
-For more about my work, check out my Github profile: https://github.com/${answers.github}
-
-If you have any questions and would like to chat, please feel free to send me 
-an email directly to ${answers.email}`;
-
-// function to initialize app and write README file after prompts are answered
-////function writeToFile(fileName, data) {}
+//function to initialize app
 const init = async () => {
-    //console.log('hi'); //test init
-    try {
-        const answers = await questions();
+        try {
+        const answers = await promptQuestions(questions);
 
-        const readme = generateReadMe(answers);
+        const markdown = await generateMarkdown(answers);
 
-        await writeFileAsync('README.md', readme);
+        writeToFile('README.md', markdown);
 
         console.log('Successfully wrote README.md');
     } catch (err) {
